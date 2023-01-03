@@ -1,9 +1,25 @@
 import Koa from 'koa'
 import next from 'next'
 import Router from 'koa-router'
+import '../db'
 
 const app = next({ dev: true })
-const handle = app.getRequestHandler()
+const handle = app.getRequestHandler();
+
+
+// PersonModel.then((Person: any) => {
+//     Person.find({ surname: "Doe" }, function (err: any, people: any) {
+//         // SQL: "SELECT * FROM person WHERE surname = 'Doe'"
+//         if (err) throw err;
+//         console.log("People found: %d", people.length);
+//         console.log("First person: %s, age %d", people[0].fullName(), people[0].age);
+
+//         people[0].age = 16;
+//         people[0].save(function (err: any) {
+//             // err.msg == "under-age";
+//         });
+//     });
+// })
 
 app.prepare().then(() => {
     const router = new Router()
