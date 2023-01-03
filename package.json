@@ -10,8 +10,13 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev-client": "pnpm --filter client dev",
-    "dev-server": "pnpm --filter server dev"
+    "dev": "pnpm dev-server && pnpm dev-client",
+    "client-build": "pnpm --filter client build",
+    "client-dev": "pnpm --filter client dev",
+    "client-start": "pnpm --filter client start",
+    "server-build": "pnpm --filter server build",
+    "server-dev": "pnpm --filter server dev",
+    "server-start": "pnpm --filter server start"
   },
   "author": "guohan",
   "devDependencies": {

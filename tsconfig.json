@@ -15,14 +15,14 @@
         "src/*"
       ],
       "@type/*": [
-        "types/*"
+        "packages/client/types/*"
       ]
     },
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "typeRoots": [
-      "types"
+      "packages/client/types"
     ],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
@@ -32,7 +32,7 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["packages/client/next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
     "**/*.d.ts"
