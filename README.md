@@ -39,6 +39,31 @@ link标签, 用于路由跳转
 #### 路由文件
 默认情况下, `next`会把`/pages`下的所有文件匹配路由, 如果项目使用自定义路由, 需要在`next.config.js`中禁止默认行为. (关注useFileSystemPublicRoutes属性)
 
+#### 服务端组件和客户端组件
+- 在Nextjs12中
+部分函数在服务端执行, 如`getServerSideProps` `getStaticPaths` `getStaticProps`
+
+而在客户端执行, 可以使用`useEffect` `onChange`回调函数
+
+- 在nextjs13中
+在app目录下, 如要使用`useState`等状态管理的hook, 那么都是只在客户端执行, 需要在首行加入`use client`
+
+- 使用场景
+  - 服务端组件: fetch请求数据 访问后端资源 在服务器上保留敏感信息 减少客户端js
+  - 客户端组件: 事件监听器(onClick等) useState/useReducer/useEffect 浏览器API 有状态的自定义hook React类组件
+
+#### next做koa的中间件
+通过next函数
+```js
+const app = next(opt)
+const handle = app.getRequestHandler()
+// ...
+```
+其中`opt`具有以下属性:
+- dev: 是否为开发环境, 默认为`false`
+- dir: Next项目路径, 默认为`.`
+- quiet: 是否隐藏错误信息(包括服务端), 默认为`false`
+- conf: 同`next.config.js`返回的对象, 默认为`{}`
 
 ### DB相关
 本DEMO使用sqlite3数据库, 由于通过orm操作数据库, 所以后续可以很方便的替换成其他数据库

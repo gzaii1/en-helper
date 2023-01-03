@@ -1,7 +1,7 @@
 {
     "verbose": false,
     "debug": false,
-    "exec": "ts-node ./server/index.ts",
+    "exec": "ts-node -r ./src/server/index.ts",
     "ignore": [
       "mochawesome-report",
       "node_modules",
@@ -13,10 +13,7 @@
       "test/**/*",
       "docs/*"
     ],
-    "events": {
-      "restart": ""
-    },
-    "watch": ["./app", "./configs", "./app.ts"],
+    "watch": ["src"],
     "ext": "ts tsx",
     "inspect": true
 }

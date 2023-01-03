@@ -5,6 +5,7 @@
     "koa": "^2.14.1",
     "koa-bodyparser": "^4.3.0",
     "koa-compose": "^4.1.0",
+    "koa-logger": "^3.2.1",
     "koa-router": "^12.0.0",
     "koa-static": "^5.0.0",
     "next": "^13.1.1",
@@ -25,14 +26,16 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "nodemon --watch ./server/index.ts"
+    "dev": "nodemon --watch",
+    "build": "tsc"
   },
   "author": "guohan",
   "devDependencies": {
     "@types/koa": "^2.13.5",
     "@types/koa-bodyparser": "^4.3.10",
-    "@types/koa-static": "^4.0.2",
+    "@types/koa-logger": "^3.1.2",
     "@types/koa-router": "^7.4.4",
+    "@types/koa-static": "^4.0.2",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
