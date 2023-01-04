@@ -1,5 +1,5 @@
 import sqlite3 from 'sqlite3'
-import { Sequelize } from 'sequelize'
+import { DataTypes, Sequelize } from 'sequelize'
 
 sqlite3.verbose()
 

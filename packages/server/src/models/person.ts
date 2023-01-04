@@ -1,26 +1,17 @@
-// @ts-ignore
-// import orm from 'orm'
-// import { createModel } from '../db'
+import { DataTypes } from 'sequelize'
+import { sequelize } from './index'
 
-// export const PersonModel = createModel(
-//     "person", 
-//     {
-//         name      : String,
-//         surname   : String,
-//         age       : Number, // FLOAT
-//         male      : Boolean,
-//         continent : [ "Europe", "America", "Asia", "Africa", "Australia", "Antarctica" ], // ENUM type
-//         photo     : Buffer, // BLOB/BINARY
-//         data      : Object // JSON encoded
-//     }, 
-//     {
-//         methods: {
-//             fullName() {
-//               return this.name + ' ' + this.surname;
-//             }
-//         },
-//         validations: {
-//             age: orm.enforce.ranges.number(18, undefined, "under-age")
-//         }
-//     }
-// )
+export const Person = sequelize.define("Person", {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    },
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    lastName: {
+        type: DataTypes.STRING,
+    },
+})
